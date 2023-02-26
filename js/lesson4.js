@@ -107,8 +107,6 @@ const instruments = [{
   price: 2000
 }]
 
-
-
 const cardEl = document.querySelector('.js-list');
 
 function makeInstrumentsArray () {
