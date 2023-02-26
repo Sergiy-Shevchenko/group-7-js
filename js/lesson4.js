@@ -84,3 +84,45 @@
 // };
 
 //refs.containerEl.style.backgroundColor = randomRgbColor();
+
+
+// ЗАДАЧА 3
+// 3.1 Є МАСИВ, ПОТРІБНО СТВОРИТИ РОЗМІТКУ ІЗ ТИХ КАРТОК через 
+
+const instruments = [{
+  id: 1,
+  img: "https://content.rozetka.com.ua/goods/images/big/13664457.jpg",
+  name: "Молоток",
+  price: 150
+},
+{
+  id: 2,
+  img: "https://machtz.com.ua/files/resized/products/dsc_2898_new.800x550.jpg",
+  name: "Перфоратор",
+  price: 3000
+},{
+  id: 3,
+  img: "https://content2.rozetka.com.ua/goods/images/big_tile/232653359.jpg",
+  name: "Рівень",
+  price: 2000
+}]
+
+
+
+const cardEl = document.querySelector('.js-list');
+
+function makeInstrumentsArray () {
+const instr = instruments.map(({id, img, name, price}) => {
+    return `
+    <li data-id="${id}">
+    <img src="${img}" alt="${name}" width='300'>
+    <h2>${name}</h2>
+    <p>${price}</p>
+    </li>    
+    `
+}).join(' ');
+cardEl.insertAdjacentHTML('beforeend', instr) 
+};
+makeInstrumentsArray();
+
+//3.2 ДОБАВТЕ КНОПКУ, ЧЕРЕЗ ЯКУ МИ КУПЛЯТИМЕМО ТОВАР
